@@ -1,0 +1,114 @@
+Arpasanu Emilia-Oana
+311 CA
+
+## "Now you see me" - Tema 1
+
+### Description:
+
+	The program shows the implementation of a doubly-linked list where
+each node contains the head of another doubly-linked list. This type
+of data structure made it possible to represent a list of decks of cards
+within the memory.
+
+	The purpose of the algorithm is to simulate some of the main
+operations that a list of decks normally supports. The user is able to write
+multiple commands to the console until the exit point is reached;
+every line that is read is checked: if the command has the correct syntax,
+the functions that implement each operation are called; otherwise,
+an error message is thrown. Based on the selected operation, further
+validation takes place; if all the requirements are met, the processes
+are executed and a success message is printed.
+
+	The list of accepted commands refers to:
+
+	- adding a deck to the list ("ADD_DECK"):
+
+		* the function allocates memory for a new deck, inserts the
+	specified number of valid cards and places it at a certain position
+	within the list (the beginning, middle or end) by modifying the link
+	between the last node and the new one;
+
+	- removing a deck from the list ("DEL_DECK"):
+
+		* the function modifies the links between the decks based on
+	the position of the deleted one (the beginning, middle or end) and then
+	deallocates its used memory (at first the cards are deallocated; the deck
+	is lastly freed);
+
+	- removing a card from a chosen deck ("DEL_CARD"):
+
+		* the function modifies the links between the contained cards
+	based on the position of the deleted one (the beginning, middle or end);
+	after that its memory is deallocated;
+
+		* if the deck only has 1 card then it is directly removed
+	from the list and deallocated;
+	
+	- adding cards to a certain deck ("ADD_CARDS"):
+
+		* the function allocates memory for each valid card that is received
+	(until the speficied number of added cards is reached) and inserts them at
+	the end of the deck by modifying the link between the last card found within
+	the list and the new one;
+
+	- finding the number of decks contained by the list ("DECK_NUMBER"):
+
+		* the function prints the value of the counter of decks that is stored
+	by the list structure;
+
+	- calculating the number of cards contained by a given deck ("DECK_LEN"):
+		
+		* the function iterates through the list of cards while incrementing
+	a counter; then the counter's value is printed;
+
+	- shuffling a deck ("SHUFFLE_DECK"):
+
+		* the function removes cards from the beginning of the list one by one
+	and inserts them back at the end of the deck by half of the deck length times;
+
+	- merging two decks ("MERGE_DECKS"):
+
+		* the function allocates memory for a new deck that will contain all
+	the cards from the given decks that are meant to be merged; then they are
+	iterated through alternatively meanwhile inserting new cards with the same
+	details at the end of the created deck; any remaining cards are added after
+	the iteration in completed and the deck is added to the end of the list;
+	finally, both decks are removed and deallocated;
+
+	- splitting a chosen deck ("SPLIT_DECK"):
+
+		* the function allocates memory for a new deck that will contain all
+	the cards found from the split position until the end; these cards are
+	iterated through and added to the end of the new deck; then the inerted cards
+	from the base deck are removed one by one starting from the end; lastly, the
+	new deck is added to the list right after the splitted deck by modifying
+	the links between the nodes;
+
+		* if the split position is 0, the process is skipped as the new deck would
+	have been empty;
+	
+	- reversing the order of the cards of a deck ("REVERSE_DECK"):
+
+		* the function iterates through the cards simultaneously
+	from the beginning and the end and swaps the details of the cards until
+	the middle of the list is reached;
+
+	- showing the cards contained by a chosen deck ("SHOW_DECK"):
+
+		* the function iterates through the list of cards and prints
+	their specific information (value and symbol);
+
+	- showing the cards from all the decks of the list ("SHOW_ALL"):
+
+		* the function iterates through the decks and for each node
+	the process described above is executed;
+
+	- sorting the cards of a deck ("SORT_DECK"):
+
+		* the function changes the order of the cards by comparing their details
+	based on the given rule and swapping them; the process is similar to the
+	interchanging sort;
+
+	- erasing the list from the memory ("EXIT"):
+
+		* each deck is deallocated and finally the list structure is freed.
